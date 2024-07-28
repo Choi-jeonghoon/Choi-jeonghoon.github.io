@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { PageProps, graphql } from 'gatsby'
 import Intro from '../components/main/Intro'
 import Category from '../components/main/Catagory'
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
-import PostItem from '../components/main/PostItem'
 import PostList from '../components/main/PostList'
 
 export default function Index({

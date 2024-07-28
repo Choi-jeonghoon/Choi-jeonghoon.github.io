@@ -2,10 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import PostItem from './PostItem'
-
-type PostListProps = {
-  posts: Queries.IndexPageQuery['allContentfulPost']['nodes']
-}
+import { TPostListProps } from '../../types/PostListType'
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,7 +11,7 @@ const Wrapper = styled.div`
   margin-top: 40px;
 `
 
-export default function PostList({ posts }: PostListProps) {
+export default function PostList({ posts }: TPostListProps) {
   return (
     <Wrapper>
       {posts.map(({ title, category, slug, date, thumbnail, description }) => (
