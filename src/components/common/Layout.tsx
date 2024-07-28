@@ -2,6 +2,7 @@ import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import { TLayoutProps } from '../../types/commonType'
 import Header from './Header'
+import Footer from './Footer'
 
 export default function Layout({ children }: TLayoutProps) {
   return (
@@ -10,6 +11,7 @@ export default function Layout({ children }: TLayoutProps) {
         <GlobalStyle></GlobalStyle>
         <Header />
         <Contents>{children}</Contents>
+        <Footer />
       </Wrapper>
     </>
   )
