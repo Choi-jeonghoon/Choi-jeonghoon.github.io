@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { CategoryProps } from '../../types/CategoryType'
+import { TCategoryProps } from '../../types/CategoryType'
 
 export default function Category({
   categories,
   selectedCategory,
   handleSelect,
-}: CategoryProps) {
+}: TCategoryProps) {
   return (
     <Wrapper>
       {Object.entries(categories).map(([category, count]) => (
