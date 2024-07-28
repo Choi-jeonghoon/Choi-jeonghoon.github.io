@@ -4,6 +4,7 @@ import Intro from '../components/main/Intro'
 import Category from '../components/main/Catagory'
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import PostItem from '../components/main/PostItem'
+import PostList from '../components/main/PostList'
 
 export default function Index({
   data: {
@@ -41,24 +42,7 @@ export default function Index({
         selectedCategory={selectedCategory}
         handleSelect={handleSelectCategory}
       />
-
-      <div
-        style={{ display: 'flex', flexWrap: 'wrap', gap: 20, marginTop: 40 }}
-      >
-        {posts.map(
-          ({ title, category, slug, date, thumbnail, description }) => (
-            <PostItem
-              title={title as string}
-              date={date as string}
-              category={category as string[]}
-              thumbnail={thumbnail?.gatsbyImageData as IGatsbyImageData}
-              description={description?.description as string}
-              slug={slug as string}
-              key={slug}
-            />
-          ),
-        )}
-      </div>
+      <PostList posts={posts} />
     </>
   )
 }
