@@ -1,12 +1,14 @@
 import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import { TLayoutProps } from '../../types/commonType'
+import Header from './Header'
 
 export default function Layout({ children }: TLayoutProps) {
   return (
     <>
       <Wrapper>
         <GlobalStyle></GlobalStyle>
+        <Header />
         <Contents>{children}</Contents>
       </Wrapper>
     </>
