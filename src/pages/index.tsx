@@ -8,13 +8,13 @@ export default function Index({
   },
 }: PageProps<Queries.IndexPageQuery>) {
   return (
-    <Layout>
+    <>
       {nodes.map(({ title, slug, date }) => (
         <div key={slug}>
           {title} / {date} / {slug}
         </div>
       ))}
-    </Layout>
+    </>
   )
 }
 
