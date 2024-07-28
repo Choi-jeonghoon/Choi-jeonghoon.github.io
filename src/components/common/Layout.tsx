@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
-import { TLayoutProps } from '../../types/commonType'
+import { TLayoutProps } from '../../types/CommonType'
 import Header from './Header'
 import Footer from './Footer'
 
@@ -18,7 +18,6 @@ export default function Layout({ children }: TLayoutProps) {
 }
 
 const GlobalStyle = createGlobalStyle`
-
   * {
     margin: 0;
     padding: 0;
