@@ -1,6 +1,7 @@
 import React from 'react'
 import { PageProps, graphql } from 'gatsby'
 import Layout from '../components/common/Layout'
+import Intro from '../components/main/Intro'
 
 export default function Index({
   data: {
@@ -9,6 +10,7 @@ export default function Index({
 }: PageProps<Queries.IndexPageQuery>) {
   return (
     <>
+      <Intro />
       {nodes.map(({ title, slug, date }) => (
         <div key={slug}>
           {title} / {date} / {slug}
