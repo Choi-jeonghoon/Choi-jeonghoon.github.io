@@ -17,14 +17,6 @@ export default function Index({
     </Layout>
   )
 }
-export const Head = () => (
-  <link
-    rel="stylesheet"
-    as="style"
-    crossOrigin="anonymous"
-    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
-  />
-)
 
 export const query = graphql`
   query IndexPage {
