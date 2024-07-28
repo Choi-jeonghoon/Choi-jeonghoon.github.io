@@ -50,4 +50,8 @@ const Menu = styled.div`
     display: flex;
     color: initial;
   }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
 `
