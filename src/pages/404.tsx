@@ -1,6 +1,7 @@
-import { Link } from 'gatsby'
+import { HeadFC, Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
+import SEO from '../components/common/Seo'
 
 export default function NotFoundPage() {
   return (
@@ -11,6 +12,8 @@ export default function NotFoundPage() {
     </Wrapper>
   )
 }
+
+export const Head: HeadFC = () => <SEO />
 
 const Wrapper = styled.div`
   display: flex;

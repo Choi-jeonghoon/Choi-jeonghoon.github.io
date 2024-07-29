@@ -14,8 +14,9 @@ require('dotenv').config() //환경변수 로드 시켜주기
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Dev_Apple`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Dev_AppleBlog`,
+    description: `개발지식을 공유하는 공간`,
+    siteUrl: `https://jeong-hoon.github.io`,
   },
 
   graphqlTypegen: true,

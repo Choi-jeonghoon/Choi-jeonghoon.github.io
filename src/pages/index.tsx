@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { PageProps, graphql } from 'gatsby'
+import { HeadFC, PageProps, graphql } from 'gatsby'
 import Intro from '../components/main/Intro'
 import Category from '../components/main/Catagory'
 import PostList from '../components/main/PostList'
+import SEO from '../components/common/Seo'
 
 export default function Index({
   data: {
@@ -44,6 +45,8 @@ export default function Index({
     </>
   )
 }
+
+export const Head: HeadFC = () => <SEO />
 
 export const query = graphql`
   query IndexPage {
