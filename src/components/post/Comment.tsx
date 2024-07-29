@@ -1,36 +1,36 @@
-import React from 'react'
-import { useEffect, useRef } from 'react'
-
-const ATTRIBUTES = {
-  src: 'https://utteranc.es/client.js',
-  repo: 'Choi-jeonghoon/Jeong-hoon.github.io',
-  'issue-term': 'pathname',
-  label: 'Comment',
-  theme: 'github-light', //'github-dark',
-  crossorigin: 'anonymous',
-  async: 'true',
-}
+import React, { useEffect, useRef } from 'react'
+import { useThemeStore } from '../../store/themeStore'
 
 export default function Comment() {
   const ref = useRef<HTMLDivElement>(null)
+  const { theme } = useThemeStore()
 
   useEffect(() => {
     if (ref.current === null) return
 
     const utterances: HTMLScriptElement = document.createElement('script')
+    const attributes = {
+      src: 'https://utteranc.es/client.js',
+      repo: 'Choi-jeonghoon/Choi-Jeonghoon.github.io',
+      'issue-term': 'pathname',
+      label: 'Comment',
+      theme: theme === 'dark' ? 'github-dark' : 'github-light',
+      crossorigin: 'anonymous',
+      async: 'true',
+    }
 
-    Object.entries(ATTRIBUTES).forEach(([key, value]) =>
+    Object.entries(attributes).forEach(([key, value]) =>
       utterances.setAttribute(key, value),
     )
 
-    ref.current?.appendChild(utterances)
+    ref.current.appendChild(utterances)
 
-    // 개발 환경에서 리렌더링 시, 댓글 컴포넌트가 여러 개 생기는 것을 방지하기 위함입니다.
+    // Clean up the script on unmount
     return () => {
       if (ref.current?.hasChildNodes())
         ref.current.removeChild(ref.current.childNodes[0])
     }
-  }, [])
+  }, [theme]) // theme 값이 변경될 때마다 useEffect가 실행됨
 
   return <div ref={ref} />
 }

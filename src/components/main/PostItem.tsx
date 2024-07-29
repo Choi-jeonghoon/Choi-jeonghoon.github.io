@@ -41,8 +41,9 @@ const Wrapper = styled(Link)`
   flex-direction: column;
   overflow: hidden;
   width: 320px;
+  border: 1px solid Darkgray;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   text-decoration: none;
   color: inherit;
 
@@ -53,6 +54,11 @@ const Wrapper = styled(Link)`
   @media (max-width: 768px) {
     width: 100%;
   }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  }
 `
 
 const Thumbnail = styled.div`
@@ -60,6 +66,7 @@ const Thumbnail = styled.div`
   place-items: center;
   overflow: hidden;
   height: 200px;
+  border-bottom: 1px solid black;
 `
 
 const Contents = styled.div`

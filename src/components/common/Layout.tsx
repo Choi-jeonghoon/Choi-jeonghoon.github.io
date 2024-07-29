@@ -1,19 +1,27 @@
 import React from 'react'
-import styled, { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 import { TLayoutProps } from '../../types/CommonType'
 import Header from './Header'
 import Footer from './Footer'
+import { useThemeStore } from '../../store/themeStore'
+import { darkTheme, lightTheme } from '../../theme/theme'
 
 export default function Layout({ children }: TLayoutProps) {
+  const { theme } = useThemeStore()
+
+  const currentTheme = theme === 'dark' ? darkTheme : lightTheme
+
   return (
-    <>
-      <Wrapper>
-        <GlobalStyle></GlobalStyle>
-        <Header />
-        <Contents>{children}</Contents>
-        <Footer />
-      </Wrapper>
-    </>
+    <ThemeProvider theme={currentTheme}>
+      <>
+        <Wrapper>
+          <GlobalStyle></GlobalStyle>
+          <Header />
+          <Contents>{children}</Contents>
+          <Footer />
+        </Wrapper>
+      </>
+    </ThemeProvider>
   )
 }
 
@@ -31,6 +39,8 @@ const GlobalStyle = createGlobalStyle`
   #gatsby-focus-wrapper {
     min-height: 100%;
     height: 100%;
+    background-color: ${({ theme }) => theme.background};
+    color: ${({ theme }) => theme.color};
   }
 `
 
@@ -51,9 +61,9 @@ const Wrapper = styled.div`
   }
 `
 const Contents = styled.div`
-  margin: 80px 0;
+  margin: 20px 0;
 
   @media (max-width: 1024px) {
-    margin: 50px 0;
+    margin: 20px 0;
   }
 `

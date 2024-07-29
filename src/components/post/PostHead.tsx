@@ -67,7 +67,9 @@ const Title = styled.div`
   overflow: hidden;
   font-size: 30px;
   font-weight: 700;
-  color: #ffffff;
+  // color: #ffffff;
+
+  color: ${({ theme }) => theme.color};
   text-overflow: ellipsis;
   word-wrap: break-word;
   -webkit-line-clamp: 2;
@@ -87,10 +89,10 @@ const Information = styled.div`
   display: flex;
   justify-content: space-between;
   padding-bottom: 15px;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid ${({ theme }) => theme.borderColor};
   font-size: 15px;
   font-weight: 300;
-  color: #ffffff;
+  color: ${({ theme }) => theme.color};
 
   @media (max-width: 1024px) {
     padding-bottom: 10px;
@@ -112,7 +114,7 @@ const Thumbnail = styled(GatsbyImage)`
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: 1;
   width: 100%;
   height: 100%;
 

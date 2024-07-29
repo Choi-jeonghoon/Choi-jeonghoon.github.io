@@ -35,7 +35,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1",
     "styled-components": "^6.1.12",
-    "uri-js": "^4.2.2"
+    "uri-js": "^4.2.2",
+    "zustand": "^4.5.4"
   },
   "devDependencies": {
     "@types/node": "^20.11.19",
