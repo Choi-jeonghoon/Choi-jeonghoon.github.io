@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Prism from 'prismjs'
 import 'prismjs/components/prism-typescript'
 import useRenderRichText from '../../hooks/useRenderRichText'
+import Comment from './Comment'
 
 type PostBodyProps = {
   content: Queries.ContentfulPostContent
@@ -37,6 +38,7 @@ export default function PostBody({ content }: PostBodyProps) {
     <Wrapper>
       <Content>
         <div id="content">{richText}</div>
+        <Comment />
       </Content>
     </Wrapper>
   )
