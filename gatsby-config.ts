@@ -12,7 +12,7 @@ Invalid plugin options for "gatsby-source-contentful":
 */
 require('dotenv').config() //환경변수 로드 시켜주기
 
-const SITE_URL = 'https://jeong-hoon.github.io'
+const SITE_URL = 'https://Choi-jeonghoon.github.io' //깃헙 계정명과 동일하게 작성해주것
 
 const config: GatsbyConfig = {
   siteMetadata: {
