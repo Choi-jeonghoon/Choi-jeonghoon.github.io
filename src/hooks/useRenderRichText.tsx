@@ -5,7 +5,7 @@ import {
 } from 'gatsby-source-contentful/rich-text'
 import { getImage } from 'gatsby-plugin-image'
 import { NodeRenderer, Options } from '@contentful/rich-text-react-renderer'
-import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types'
+import { BLOCKS, INLINES, MARKS, Text } from '@contentful/rich-text-types'
 import {
   Blockquote,
   Heading,
@@ -45,8 +45,13 @@ const options: Options = {
   },
   renderNode: {
     ...HEADERS.reduce<{ [block: string]: NodeRenderer }>((nodes, header) => {
-      nodes[header] = (_node, children) => (
-        <Heading type={header}>{children}</Heading>
+      nodes[header] = (node, children) => (
+        <Heading
+          type={header}
+          id={`${(node.content[0] as Text).value.replaceAll(' ', '-')}_`}
+        >
+          {children}
+        </Heading>
       )
 
       return nodes

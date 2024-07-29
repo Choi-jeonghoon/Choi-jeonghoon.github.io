@@ -4,6 +4,7 @@ import Prism from 'prismjs'
 import 'prismjs/components/prism-typescript'
 import useRenderRichText from '../../hooks/useRenderRichText'
 import Comment from './Comment'
+import TableOfContents from './TableOfContents'
 
 type PostBodyProps = {
   content: Queries.ContentfulPostContent
@@ -40,6 +41,7 @@ export default function PostBody({ content }: PostBodyProps) {
         <div id="content">{richText}</div>
         <Comment />
       </Content>
+      <TableOfContents content={content} />
     </Wrapper>
   )
 }
