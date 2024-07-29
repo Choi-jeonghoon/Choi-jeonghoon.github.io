@@ -12,11 +12,13 @@ Invalid plugin options for "gatsby-source-contentful":
 */
 require('dotenv').config() //환경변수 로드 시켜주기
 
+const SITE_URL = 'https://jeong-hoon.github.io'
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Dev_AppleBlog`,
     description: `개발지식을 공유하는 공간`,
-    siteUrl: `https://jeong-hoon.github.io`,
+    siteUrl: SITE_URL,
   },
 
   graphqlTypegen: true,
@@ -41,6 +43,13 @@ const config: GatsbyConfig = {
         path: './src/images/',
       },
       __key: 'images',
+    },
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: SITE_URL,
+        stripQueryString: true,
+      },
     },
   ],
 }
