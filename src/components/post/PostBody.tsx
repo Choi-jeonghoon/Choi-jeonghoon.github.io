@@ -18,6 +18,11 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   padding-top: 100px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    padding-top: 60px;
+  }
 `
 
 const Content = styled.div`
@@ -28,6 +33,12 @@ const Content = styled.div`
   font-size: 16px;
   line-height: 2;
   word-break: break-word;
+
+  @media (max-width: 768px) {
+    gap: 50px;
+    font-size: 14px;
+    line-height: 1.8;
+  }
 `
 
 export default function PostBody({ content }: PostBodyProps) {

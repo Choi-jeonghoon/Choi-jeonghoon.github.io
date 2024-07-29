@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { HEADERS } from './useRenderRichText'
 import { TContentType } from '../types/TableType'
 
@@ -31,6 +31,25 @@ export default function useTableOfContents(rawContent: string) {
       return { id, title, depth }
     })
   }, [rawContent])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries =>
+        setActiveId(prevId => {
+          if (entries[0].boundingClientRect.top < 0) return entries[0].target.id
+          else {
+            const index = toc.findIndex(({ id }) => id === prevId)
+            return index > 0 ? toc[index - 1].id : null
+          }
+        }),
+      { rootMargin: '0% 0px -100% 0px' },
+    )
+    document
+      .querySelectorAll('#content > h1,h2,h3')
+      .forEach(element => observer.observe(element))
+
+    return () => observer.disconnect()
+  }, [toc])
 
   return { toc, activeId }
 }

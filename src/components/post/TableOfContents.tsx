@@ -35,6 +35,10 @@ const Wrapper = styled.div`
   position: sticky;
   top: 100px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 const Title = styled.div`
