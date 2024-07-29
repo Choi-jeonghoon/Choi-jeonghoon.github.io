@@ -34,4 +34,4 @@ jobs:
         with:
           access-token: ${{ secrets.DEPLOYMENT_ACCESS_TOKEN }}
           deploy-branch: main
-          gatsby-args: --verbose
+          gatsby-args: --verbose # 빌드 동작 확인을 위해서 존재
