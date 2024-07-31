@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import { AiFillGithub, AiFillMail, AiFillBulb } from 'react-icons/ai'
-import { FaSun, FaMoon } from 'react-icons/fa' // 사용할 아이콘들
+import { FaSun, FaMoon } from 'react-icons/fa'
 import { useThemeStore } from '../../store/themeStore'
 
 export default function Header() {
@@ -12,18 +11,6 @@ export default function Header() {
     <Wrapper>
       <Title to="/">Developer 📓 J-Hoon</Title>
 
-      <Menu>
-        <a href="https://github.com/Choi-jeonghoon" target="_blank">
-          <AiFillGithub />
-        </a>
-        <a
-          href="mailto:devjeongssi94@gmail.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <AiFillMail />
-        </a>
-      </Menu>
       <SwitchContainer>
         <ThemeSwitch onClick={toggleTheme}>
           <SwitchThumb theme={theme}>
@@ -39,7 +26,7 @@ const Wrapper = styled.div<{ theme: 'light' | 'dark' }>`
   z-index: 1000;
 
   display: flex;
-  // justify-content: space-between;
+  justify-content: space-between;
   align-items: center;
   height: 80px;
   gap: 4rem;
@@ -52,20 +39,6 @@ const Title = styled(Link)`
   color: inherit;
 `
 
-const Menu = styled.div`
-  display: flex;
-  gap: 15px;
-  font-size: 25px;
-
-  & > a {
-    display: flex;
-    color: initial;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 20px;
-  }
-`
 const SwitchContainer = styled.div`
   display: flex;
   align-items: center;
