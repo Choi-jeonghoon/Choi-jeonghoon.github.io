@@ -1,10 +1,10 @@
 import React from 'react'
 import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
-import { TLayoutProps } from '../../types/CommonType'
 import Header from './Header'
 import Footer from './Footer'
 import { useThemeStore } from '../../store/themeStore'
 import { darkTheme, lightTheme } from '../../theme/theme'
+import { TLayoutProps } from '../../types/commonType'
 
 export default function Layout({ children }: TLayoutProps) {
   const { theme } = useThemeStore()

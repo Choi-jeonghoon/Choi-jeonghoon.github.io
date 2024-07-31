@@ -14,6 +14,7 @@ export default function PostList({ posts }: TPostListProps) {
     posts.slice(0, 10).map(post => ({ post, groupKey: 0 })),
   )
   const handleLoadPosts = (nextGroupKey: number) => {
+    console.log('123123')
     const nextPosts = posts
       .slice(nextGroupKey * 10, (nextGroupKey + 1) * 10)
       .map(post => ({ groupKey: nextGroupKey, post }))
@@ -23,33 +24,35 @@ export default function PostList({ posts }: TPostListProps) {
   useEffect(() => setItems(getInitialPosts(posts)), [posts])
 
   return (
-    <Wrapper
-      gap={20}
-      onRequestAppend={({ groupKey }: { groupKey: number }) => {
-        const nextGroupKey = parseInt(groupKey?.toString() ?? '0') + 1
-        if (posts.length <= nextGroupKey * 10) return
-        handleLoadPosts(nextGroupKey)
-      }}
-    >
-      {items.map(
-        ({
-          post: { title, date, category, thumbnail, description, slug },
-          groupKey,
-        }) => (
-          <PostItem
-            title={title as string}
-            date={date as string}
-            category={category as string[]}
-            thumbnail={thumbnail?.gatsbyImageData as IGatsbyImageData}
-            description={description?.description as string}
-            slug={slug as string}
-            key={slug}
-            data-grid-groupkey={groupKey}
-          />
-        ),
-      )}
-      {items.length < 3 ? <div /> : null}
-    </Wrapper>
+    <>
+      <Wrapper
+        gap={20}
+        onRequestAppend={({ groupKey }: { groupKey: number }) => {
+          const nextGroupKey = parseInt(groupKey?.toString() ?? '0') + 1
+          if (posts.length <= nextGroupKey * 10) return
+          handleLoadPosts(nextGroupKey)
+        }}
+      >
+        {items.map(
+          ({
+            post: { title, date, category, thumbnail, description, slug },
+            groupKey,
+          }) => (
+            <PostItem
+              title={title as string}
+              date={date as string}
+              category={category as string[]}
+              thumbnail={thumbnail?.gatsbyImageData as IGatsbyImageData}
+              description={description?.description as string}
+              slug={slug as string}
+              key={slug}
+              data-grid-groupkey={groupKey}
+            />
+          ),
+        )}
+        {items.length < 3 ? <div /> : null}
+      </Wrapper>
+    </>
   )
 }
 

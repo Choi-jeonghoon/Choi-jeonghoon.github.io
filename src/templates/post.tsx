@@ -67,6 +67,7 @@ export const query = graphql`
     }
   }
 `
+
 /*
 @Memo
   ... on => GraphQL의 인라인 프래그먼트 문법으로, 특정 타입에 해당하는 필드를 선택적으로 쿼리할 때 사용

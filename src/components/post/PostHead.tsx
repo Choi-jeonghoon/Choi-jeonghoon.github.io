@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { graphql } from 'gatsby'
 import { TPostHeadProps } from '../../types/PostHeadType'
 
 export default function PostHead({
@@ -27,16 +26,6 @@ export default function PostHead({
     </Wrapper>
   )
 }
-
-export const query = graphql`
-  query PostPage($slug: String!) {
-    contentfulPost(slug: { eq: $slug }) {
-      title
-      slug
-      date
-    }
-  }
-`
 
 const Wrapper = styled.div`
   position: relative;
@@ -88,6 +77,7 @@ const Title = styled.div`
 const Information = styled.div`
   display: flex;
   justify-content: space-between;
+  z-index: 2;
   padding-bottom: 15px;
   border-bottom: 1px solid ${({ theme }) => theme.borderColor};
   font-size: 15px;
