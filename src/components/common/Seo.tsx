@@ -58,6 +58,10 @@ export default function SEO({
       <meta name="twitter:image" content={metadata.image} />
       <meta name="twitter:site" content="@사용자이름" />
       <meta name="twitter:creator" content="@사용자이름" />
+      <meta
+        name="naver-site-verification"
+        content="259e0b3b5b2f341f70108a526997cc6230a7b762"
+      />
 
       {children}
     </>
