@@ -1,41 +1,24 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
-import { MasonryInfiniteGrid } from '@egjs/react-infinitegrid'
 import PostItem from './PostItem'
 import { TPostListProps } from '../../types/PostListType'
-
-function getInitialPosts(posts: TPostListProps['posts']) {
-  return posts.slice(0, 10).map(post => ({ groupKey: 0, post }))
-}
+import { useScroll } from '../../hooks/useScroll'
 
 export default function PostList({ posts }: TPostListProps) {
-  const [items, setItems] = useState(
-    posts.slice(0, 10).map(post => ({ post, groupKey: 0 })),
-  )
-  const handleLoadPosts = (nextGroupKey: number) => {
-    const nextPosts = posts
-      .slice(nextGroupKey * 10, (nextGroupKey + 1) * 10)
-      .map(post => ({ groupKey: nextGroupKey, post }))
+  const itemsPerPage = 10
 
-    setItems(prev => [...prev, ...nextPosts])
-  }
-  useEffect(() => setItems(getInitialPosts(posts)), [posts])
+  // useScroll 훅을 사용하여 스크롤과 데이터 로드를 처리
+  //  posts =>  readonly 배열을 mutable로 변환
+  const { displayItems, loading } = useScroll(
+    posts as Array<(typeof posts)[number]>,
+    itemsPerPage,
+  )
 
   return (
-    <Wrapper
-      gap={20}
-      onRequestAppend={({ groupKey }: { groupKey: number }) => {
-        const nextGroupKey = parseInt(groupKey?.toString() ?? '0') + 1
-        if (posts.length <= nextGroupKey * 10) return
-        handleLoadPosts(nextGroupKey)
-      }}
-    >
-      {items.map(
-        ({
-          post: { title, date, category, thumbnail, description, slug },
-          groupKey,
-        }) => (
+    <Wrapper>
+      {displayItems.map(
+        ({ title, date, category, thumbnail, description, slug }) => (
           <PostItem
             title={title as string}
             date={date as string}
@@ -44,15 +27,30 @@ export default function PostList({ posts }: TPostListProps) {
             description={description?.description as string}
             slug={slug as string}
             key={slug}
-            data-grid-groupkey={groupKey}
           />
         ),
       )}
-      {items.length < 3 ? <div /> : null}
+      {loading && <LoadingIndicator>Loading...</LoadingIndicator>}
     </Wrapper>
   )
 }
 
-const Wrapper = styled(MasonryInfiniteGrid)`
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
   margin-top: 40px;
+  width: 100%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+`
+
+const LoadingIndicator = styled.div`
+  grid-column: span 2;
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  color: #333;
 `
