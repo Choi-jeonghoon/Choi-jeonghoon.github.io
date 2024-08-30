@@ -35,7 +35,8 @@
 
 ## 프로젝트 소개
 
-- 개시글 작성이후 사진첨부
+- ![블로그](https://github.com/user-attachments/assets/447f94a2-cd51-4c88-9edf-fa34b3fbe6ca)
+
 
 **◼️ 개요**
 
