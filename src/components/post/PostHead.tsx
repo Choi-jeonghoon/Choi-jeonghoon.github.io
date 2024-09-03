@@ -2,17 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { TPostHeadProps } from '../../types/PostHeadType'
+import { useThemeStore } from '../../store/themeStore'
 
 export default function PostHead({
   thumbnail,
   title,
   category,
+  description,
   date,
 }: TPostHeadProps) {
   return (
     <Wrapper>
       <Title>{title}</Title>
-
+      <Description>{description}</Description>
       <Information>
         <Category>
           {category.map(item => (
@@ -56,14 +58,13 @@ const Title = styled.div`
   overflow: hidden;
   font-size: 30px;
   font-weight: 700;
-  // color: #ffffff;
-
-  color: ${({ theme }) => theme.color};
+  z-index: 2;
   text-overflow: ellipsis;
   word-wrap: break-word;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   line-height: 1.2em;
+  color: white;
 
   @media (max-width: 1024px) {
     font-size: 24px;
@@ -74,15 +75,38 @@ const Title = styled.div`
   }
 `
 
+const Description = styled.div`
+  display: -webkit-box;
+  max-height: 2.4em;
+  overflow: hidden;
+  font-size: 16px;
+  font-weight: 700;
+  z-index: 2;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1.2em;
+  color: white;
+
+  @media (max-width: 1024px) {
+    font-size: 10.5px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 6.5px;
+  }
+`
+
 const Information = styled.div`
   display: flex;
   justify-content: space-between;
   z-index: 2;
   padding-bottom: 15px;
-  border-bottom: 1px solid ${({ theme }) => theme.borderColor};
+  border-bottom: 1px solid white;
   font-size: 15px;
   font-weight: 300;
-  color: ${({ theme }) => theme.color};
+  color: white;
 
   @media (max-width: 1024px) {
     padding-bottom: 10px;

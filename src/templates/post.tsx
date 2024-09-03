@@ -13,6 +13,12 @@ export default function Post({
       <PostHead
         title={contentfulPost?.title as string}
         category={contentfulPost?.category as string[]}
+        description={
+          typeof contentfulPost?.description === 'object' &&
+          contentfulPost.description !== null
+            ? contentfulPost.description.description ?? ''
+            : ''
+        }
         date={contentfulPost?.date as string}
         thumbnail={
           contentfulPost?.thumbnail?.gatsbyImageData as IGatsbyImageData
