@@ -1,0 +1,143 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 5.13.7"/><meta name="description" content="React의 구조는 파악하고 웹뷰로 앱을 개발한 경험은 있지만, 실제로 네이티브 앱을 만든 적은 없습니다. 이제 React Native를 통해 네이티브 앱 개발을 시작해보려 합니다. 익숙한 React 문법을 바탕으로, 새로운 도전을 해보자~!" data-gatsby-head="true"/><meta name="viewport" content="width=device-width, initial-scale=1.0" data-gatsby-head="true"/><meta http-equiv="Content-Type" content="text/html;charset=UTF-8" data-gatsby-head="true"/><meta property="og:type" content="website" data-gatsby-head="true"/><meta property="og:title" content="React-Native의 시작해보자" data-gatsby-head="true"/><meta property="og:description" content="React의 구조는 파악하고 웹뷰로 앱을 개발한 경험은 있지만, 실제로 네이티브 앱을 만든 적은 없습니다. 이제 React Native를 통해 네이티브 앱 개발을 시작해보려 합니다. 익숙한 React 문법을 바탕으로, 새로운 도전을 해보자~!" data-gatsby-head="true"/><meta property="og:image" content="https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg" data-gatsby-head="true"/><meta property="og:url" content="https://Choi-jeonghoon.github.io/리엑트네이티브" data-gatsby-head="true"/><meta property="og:site_name" content="React-Native의 시작해보자" data-gatsby-head="true"/><meta name="twitter:card" content="summary" data-gatsby-head="true"/><meta name="twitter:title" content="React-Native의 시작해보자" data-gatsby-head="true"/><meta name="twitter:description" content="React의 구조는 파악하고 웹뷰로 앱을 개발한 경험은 있지만, 실제로 네이티브 앱을 만든 적은 없습니다. 이제 React Native를 통해 네이티브 앱 개발을 시작해보려 합니다. 익숙한 React 문법을 바탕으로, 새로운 도전을 해보자~!" data-gatsby-head="true"/><meta name="twitter:image" content="https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg" data-gatsby-head="true"/><meta name="twitter:site" content="@사용자이름" data-gatsby-head="true"/><meta name="twitter:creator" content="@사용자이름" data-gatsby-head="true"/><meta name="naver-site-verification" content="259e0b3b5b2f341f70108a526997cc6230a7b762" data-gatsby-head="true"/><style data-href="/styles.45a02be8c27400115ebb.css" data-identity="gatsby-global-css">code[class*=language-],pre[class*=language-]{word-wrap:normal;background:0 0;color:#ccc;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;font-size:1em;-webkit-hyphens:none;hyphens:none;line-height:1.5;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}pre[class*=language-]{margin:.5em 0;overflow:auto;padding:1em}:not(pre)>code[class*=language-],pre[class*=language-]{background:#2d2d2d}:not(pre)>code[class*=language-]{border-radius:.3em;padding:.1em;white-space:normal}.token.block-comment,.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#999}.token.punctuation{color:#ccc}.token.attr-name,.token.deleted,.token.namespace,.token.tag{color:#e2777a}.token.function-name{color:#6196cc}.token.boolean,.token.function,.token.number{color:#f08d49}.token.class-name,.token.constant,.token.property,.token.symbol{color:#f8c555}.token.atrule,.token.builtin,.token.important,.token.keyword,.token.selector{color:#cc99cd}.token.attr-value,.token.char,.token.regex,.token.string,.token.variable{color:#7ec699}.token.entity,.token.operator,.token.url{color:#67cdcc}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.token.inserted{color:green}</style><style>.gatsby-image-wrapper{position:relative;overflow:hidden}.gatsby-image-wrapper picture.object-fit-polyfill{position:static!important}.gatsby-image-wrapper img{bottom:0;height:100%;left:0;margin:0;max-width:none;padding:0;position:absolute;right:0;top:0;width:100%;object-fit:cover}.gatsby-image-wrapper [data-main-image]{opacity:0;transform:translateZ(0);transition:opacity .25s linear;will-change:opacity}.gatsby-image-wrapper-constrained{display:inline-block;vertical-align:top}</style><noscript><style>.gatsby-image-wrapper noscript [data-main-image]{opacity:1!important}.gatsby-image-wrapper [data-placeholder-image]{opacity:0!important}</style></noscript><script type="module">const e="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;e&&document.body.addEventListener("load",(function(e){const t=e.target;if(void 0===t.dataset.mainImage)return;if(void 0===t.dataset.gatsbyImageSsr)return;let a=null,n=t;for(;null===a&&n;)void 0!==n.parentNode.dataset.gatsbyImageWrapper&&(a=n.parentNode),n=n.parentNode;const o=a.querySelector("[data-placeholder-image]"),r=new Image;r.src=t.currentSrc,r.decode().catch((()=>{})).then((()=>{t.style.opacity=1,o&&(o.style.opacity=0,o.style.transition="opacity 500ms linear")}))}),!0);</script><style data-styled="" data-styled-version="6.1.12">.bixGSK{z-index:1000;display:flex;justify-content:space-between;align-items:center;height:80px;gap:4rem;}/*!sc*/
+data-styled.g1[id="Header__Wrapper-sc-1nq7ogc-0"]{content:"bixGSK,"}/*!sc*/
+.fmPENs{font-size:15px;font-weight:700;text-decoration:none;color:inherit;}/*!sc*/
+data-styled.g2[id="Header__Title-sc-1nq7ogc-1"]{content:"fmPENs,"}/*!sc*/
+.fTzrag{display:flex;align-items:center;justify-content:center;}/*!sc*/
+data-styled.g3[id="Header__SwitchContainer-sc-1nq7ogc-2"]{content:"fTzrag,"}/*!sc*/
+.iknSjd{position:relative;width:60px;height:30px;background:#ddd;border-radius:15px;cursor:pointer;transition:background 0.3s;display:flex;align-items:center;padding:2px;}/*!sc*/
+data-styled.g4[id="Header__ThemeSwitch-sc-1nq7ogc-3"]{content:"iknSjd,"}/*!sc*/
+.kigixD{position:absolute;width:26px;height:26px;background:#ffeb3b;border-radius:50%;top:2px;left:32px;transition:left 0.3s;display:flex;justify-content:center;align-items:center;color:#000;}/*!sc*/
+data-styled.g5[id="Header__SwitchThumb-sc-1nq7ogc-4"]{content:"kigixD,"}/*!sc*/
+.bbQMae{display:grid;place-items:center;margin-top:auto;padding:50px 0;font-size:15px;text-align:center;line-height:1.5;}/*!sc*/
+@media (max-width:768px){.bbQMae{font-size:12px;}}/*!sc*/
+data-styled.g6[id="Footer__Wrapper-sc-1mndp28-0"]{content:"bbQMae,"}/*!sc*/
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Pretendard';}/*!sc*/
+html,body,#___gatsby,#gatsby-focus-wrapper{min-height:100%;height:100%;background-color:slategrey;color:white;}/*!sc*/
+data-styled.g7[id="sc-global-fapXCS1"]{content:"sc-global-fapXCS1,"}/*!sc*/
+.hKcWaF{display:flex;flex-direction:column;width:1000px;min-height:100%;margin:0 auto;}/*!sc*/
+@media (max-width:1024px){.hKcWaF{width:100%;padding:0 40px;}}/*!sc*/
+@media (max-width:768px){.hKcWaF{padding:0 20px;}}/*!sc*/
+data-styled.g8[id="Layout__Wrapper-sc-kxg4nx-0"]{content:"hKcWaF,"}/*!sc*/
+.gDjus{margin:20px 0;}/*!sc*/
+@media (max-width:1024px){.gDjus{margin:20px 0;}}/*!sc*/
+data-styled.g9[id="Layout__Contents-sc-kxg4nx-1"]{content:"gDjus,"}/*!sc*/
+.bHPGFD{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:20px;aspect-ratio:16/9;padding:50px;border-radius:20px;}/*!sc*/
+@media (max-width:1024px){.bHPGFD{padding:30px;gap:15px;}}/*!sc*/
+@media (max-width:768px){.bHPGFD{padding:20px;gap:10px;border-radius:10px;}}/*!sc*/
+data-styled.g10[id="PostHead__Wrapper-sc-1mc3rnb-0"]{content:"bHPGFD,"}/*!sc*/
+.fHvXZ{display:-webkit-box;max-height:2.4em;overflow:hidden;font-size:30px;font-weight:700;z-index:2;text-overflow:ellipsis;word-wrap:break-word;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.2em;color:white;}/*!sc*/
+@media (max-width:1024px){.fHvXZ{font-size:24px;}}/*!sc*/
+@media (max-width:768px){.fHvXZ{font-size:18px;}}/*!sc*/
+data-styled.g11[id="PostHead__Title-sc-1mc3rnb-1"]{content:"fHvXZ,"}/*!sc*/
+.cTesgw{display:-webkit-box;max-height:2.4em;overflow:hidden;font-size:16px;font-weight:700;z-index:2;text-overflow:ellipsis;word-wrap:break-word;-webkit-line-clamp:2;-webkit-box-orient:vertical;line-height:1.2em;color:white;}/*!sc*/
+@media (max-width:1024px){.cTesgw{font-size:10.5px;}}/*!sc*/
+@media (max-width:768px){.cTesgw{font-size:6.5px;}}/*!sc*/
+data-styled.g12[id="PostHead__Description-sc-1mc3rnb-2"]{content:"cTesgw,"}/*!sc*/
+.cSRvlD{display:flex;justify-content:space-between;z-index:2;padding-bottom:15px;border-bottom:1px solid white;font-size:15px;font-weight:300;color:white;}/*!sc*/
+@media (max-width:1024px){.cSRvlD{padding-bottom:10px;font-size:13px;}}/*!sc*/
+@media (max-width:768px){.cSRvlD{padding-bottom:8px;font-size:11px;}}/*!sc*/
+data-styled.g13[id="PostHead__Information-sc-1mc3rnb-3"]{content:"cSRvlD,"}/*!sc*/
+.jJDhow{display:flex;gap:7px;}/*!sc*/
+data-styled.g14[id="PostHead__Category-sc-1mc3rnb-4"]{content:"jJDhow,"}/*!sc*/
+.hCRwVh{position:absolute;top:0;left:0;z-index:1;width:100%;height:100%;}/*!sc*/
+.hCRwVh:after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient( 180deg,rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.9) 130% );}/*!sc*/
+data-styled.g17[id="PostHead__Thumbnail-sc-1mc3rnb-7"]{content:"hCRwVh,"}/*!sc*/
+.jYyHCj{font-size:20px;font-weight:700;margin-bottom:30px;}/*!sc*/
+*+.jYyHCj{margin-top:80px;}/*!sc*/
+hr+.jYyHCj{margin-top:0;}/*!sc*/
+data-styled.g20[id="Heading__HEADING_3-sc-1k0furn-2"]{content:"jYyHCj,"}/*!sc*/
+.kTtEmc{margin:30px 0!important;padding:16px;background:#f5f5f5;border-radius:8px;overflow:auto;}/*!sc*/
+.kTtEmc code{font-family:'Nanum Gothic Coding',monospace!important;}/*!sc*/
+data-styled.g28[id="Code__BlockCode-sc-1sgsjb6-1"]{content:"kTtEmc,"}/*!sc*/
+.eWjeQm{position:sticky;top:100px;width:100%;}/*!sc*/
+@media (max-width:768px){.eWjeQm{display:none;}}/*!sc*/
+data-styled.g29[id="TableOfContents__Wrapper-sc-1nnntu9-0"]{content:"eWjeQm,"}/*!sc*/
+.krraYG{padding-bottom:20px;border-bottom:1px solid #000000;font-size:15px;font-weight:600;}/*!sc*/
+data-styled.g30[id="TableOfContents__Title-sc-1nnntu9-1"]{content:"krraYG,"}/*!sc*/
+.dgbGMb{display:grid;grid-gap:10px;margin-top:20px;}/*!sc*/
+data-styled.g31[id="TableOfContents__Items-sc-1nnntu9-2"]{content:"dgbGMb,"}/*!sc*/
+.fNOKUx{padding-left:0px;font-size:13px;font-weight:300;color:rgba(30,31,33,0.5);cursor:pointer;text-decoration:none;transition:0.1s all;}/*!sc*/
+data-styled.g32[id="TableOfContents__Item-sc-1nnntu9-3"]{content:"fNOKUx,"}/*!sc*/
+.hFcZij{position:relative;display:grid;grid-template-columns:1fr 220px;grid-gap:30px;justify-content:space-between;align-items:flex-start;padding-top:100px;}/*!sc*/
+@media (max-width:768px){.hFcZij{grid-template-columns:1fr;padding-top:60px;}}/*!sc*/
+data-styled.g33[id="PostBody__Wrapper-sc-17j45xp-0"]{content:"hFcZij,"}/*!sc*/
+.fWkUvM{overflow:auto;display:flex;flex-direction:column;gap:100px;font-size:16px;line-height:2;word-break:break-word;}/*!sc*/
+@media (max-width:768px){.fWkUvM{gap:50px;font-size:14px;line-height:1.8;}}/*!sc*/
+data-styled.g34[id="PostBody__Content-sc-17j45xp-1"]{content:"fWkUvM,"}/*!sc*/
+</style><link rel="sitemap" type="application/xml" href="/sitemap-index.xml"/><link rel="canonical" href="https://choi-jeonghoon.github.io/리엑트네이티브/" data-baseprotocol="https:" data-basehost="choi-jeonghoon.github.io"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-3N5MN7Q9QC"></script><script>
+    window.GATSBY_GTAG_PLUGIN_GA_TRACKING_ID = (
+      'G-3N5MN7Q9QC'
+    );
+    window.GATSBY_GTAG_PLUGIN_ANONYMIZE = false;
+
+    var options = {
+      send_page_view: false
+    };
+    if (false) {
+      options.anonymize_ip = true;
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-3N5MN7Q9QC', options);
+  </script><link rel="stylesheet" as="style" crossorigin="anonymous" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/><title data-gatsby-head="true">React-Native의 시작해보자</title></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="Layout__Wrapper-sc-kxg4nx-0 hKcWaF"><div class="Header__Wrapper-sc-1nq7ogc-0 bixGSK"><a class="Header__Title-sc-1nq7ogc-1 fmPENs" href="/">Developer 📓 J-Hoon</a><div class="Header__SwitchContainer-sc-1nq7ogc-2 fTzrag"><div class="Header__ThemeSwitch-sc-1nq7ogc-3 iknSjd"><div class="Header__SwitchThumb-sc-1nq7ogc-4 kigixD"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"></path></svg></div></div></div></div><div class="Layout__Contents-sc-kxg4nx-1 gDjus"><div class="PostHead__Wrapper-sc-1mc3rnb-0 bHPGFD"><div class="PostHead__Title-sc-1mc3rnb-1 fHvXZ">React-Native의 시작해보자</div><div class="PostHead__Description-sc-1mc3rnb-2 cTesgw">React의 구조는 파악하고 웹뷰로 앱을 개발한 경험은 있지만, 실제로 네이티브 앱을 만든 적은 없습니다. 이제 React Native를 통해 네이티브 앱 개발을 시작해보려 합니다. 익숙한 React 문법을 바탕으로, 새로운 도전을 해보자~!</div><div class="PostHead__Information-sc-1mc3rnb-3 cSRvlD"><div class="PostHead__Category-sc-1mc3rnb-4 jJDhow"><div class="PostHead__CategoryItem-sc-1mc3rnb-5 ebGXdc">#도전</div></div><div class="PostHead__Date-sc-1mc3rnb-6 foAwNW">2024-09-21</div></div><div data-gatsby-image-wrapper="" class="gatsby-image-wrapper gatsby-image-wrapper-constrained PostHead__Thumbnail-sc-1mc3rnb-7 hCRwVh"><div style="max-width:1000px;display:block"><img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg%20height=&#x27;667&#x27;%20width=&#x27;1000&#x27;%20xmlns=&#x27;http://www.w3.org/2000/svg&#x27;%20version=&#x27;1.1&#x27;%3E%3C/svg%3E" style="max-width:100%;display:block;position:static"/></div><div aria-hidden="true" data-placeholder-image="" style="opacity:1;transition:opacity 500ms linear;background-color:#080808;position:absolute;top:0;left:0;bottom:0;right:0"></div><picture><source type="image/webp" data-srcset="https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg?w=250&amp;h=167&amp;q=50&amp;fm=webp 250w,https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg?w=500&amp;h=334&amp;q=50&amp;fm=webp 500w,https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg?w=1000&amp;h=667&amp;q=50&amp;fm=webp 1000w,https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg?w=2000&amp;h=1334&amp;q=50&amp;fm=webp 2000w" sizes="(min-width: 1000px) 1000px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 1000px) 1000px, 100vw" decoding="async" loading="lazy" data-src="https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg?w=1000&amp;h=667&amp;fl=progressive&amp;q=50&amp;fm=jpg" data-srcset="https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg?w=250&amp;h=167&amp;fl=progressive&amp;q=50&amp;fm=jpg 250w,https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg?w=500&amp;h=334&amp;fl=progressive&amp;q=50&amp;fm=jpg 500w,https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg?w=1000&amp;h=667&amp;fl=progressive&amp;q=50&amp;fm=jpg 1000w,https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg?w=2000&amp;h=1334&amp;fl=progressive&amp;q=50&amp;fm=jpg 2000w" alt="React-Native의 시작해보자"/></picture><noscript><picture><source type="image/webp" srcSet="https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg?w=250&amp;h=167&amp;q=50&amp;fm=webp 250w,https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg?w=500&amp;h=334&amp;q=50&amp;fm=webp 500w,https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg?w=1000&amp;h=667&amp;q=50&amp;fm=webp 1000w,https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg?w=2000&amp;h=1334&amp;q=50&amp;fm=webp 2000w" sizes="(min-width: 1000px) 1000px, 100vw"/><img data-gatsby-image-ssr="" data-main-image="" style="opacity:0" sizes="(min-width: 1000px) 1000px, 100vw" decoding="async" loading="lazy" src="https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg?w=1000&amp;h=667&amp;fl=progressive&amp;q=50&amp;fm=jpg" srcSet="https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg?w=250&amp;h=167&amp;fl=progressive&amp;q=50&amp;fm=jpg 250w,https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg?w=500&amp;h=334&amp;fl=progressive&amp;q=50&amp;fm=jpg 500w,https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg?w=1000&amp;h=667&amp;fl=progressive&amp;q=50&amp;fm=jpg 1000w,https://images.ctfassets.net/v4l4nvur12dk/77GWaoyfx41GrEhAsgUUhn/f4bb2f7e23fa78cd494f6d190bf36014/_______.jpg?w=2000&amp;h=1334&amp;fl=progressive&amp;q=50&amp;fm=jpg 2000w" alt="React-Native의 시작해보자"/></picture></noscript><script type="module">const t="undefined"!=typeof HTMLImageElement&&"loading"in HTMLImageElement.prototype;if(t){const t=document.querySelectorAll("img[data-main-image]");for(let e of t){e.dataset.src&&(e.setAttribute("src",e.dataset.src),e.removeAttribute("data-src")),e.dataset.srcset&&(e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset"));const t=e.parentNode.querySelectorAll("source[data-srcset]");for(let e of t)e.setAttribute("srcset",e.dataset.srcset),e.removeAttribute("data-srcset");e.complete&&(e.style.opacity=1,e.parentNode.parentNode.querySelector("[data-placeholder-image]").style.opacity=0)}}</script></div></div><div class="PostBody__Wrapper-sc-17j45xp-0 hFcZij"><div class="PostBody__Content-sc-17j45xp-1 fWkUvM"><div id="content"><h3 id="React-Native를-선택한-이유_" class="Heading__HEADING_3-sc-1k0furn-2 jYyHCj"><b>React Native를 선택한 이유</b></h3><p>React의 구조를 이미 알고 있고, 사용 방법이 익숙하기 때문에 앱 개발을 할 때 React Native를 학습하는 것이 자연스러웠습니다. 기존에 웹에서의 경험을 살려 네이티브 앱 개발로 넘어갈 수 있는 점이 매력적이었죠.</p><h3 id="React-Native와-React의-차이점_" class="Heading__HEADING_3-sc-1k0furn-2 jYyHCj"><b>React Native와 React의 차이점</b></h3><p>React에서는 &lt;div&gt; 태그를 사용하지만, React Native에서는 &lt;View&gt;라는 네이티브 컴포넌트를 사용합니다. &lt;button&gt; 태그 대신에는 &lt;Button&gt; 컴포넌트가 있으며, 클릭 이벤트도 onClick이 아닌 onPress로 처리됩니다. 아래 간단한 예시코드를 보자</p><pre class="Code__BlockCode-sc-1sgsjb6-1 kTtEmc"><code class="language-typescript">// React 
+&lt;div onClick={handleClick}&gt;Click me!&lt;/div&gt;
+ 
+// React Native 
+&lt;View onPress={handlePress}&gt;
+ &lt;Text&gt;Click me!&lt;/Text&gt;
+&lt;/View&gt;</code></pre><p>예시코드를 보면 큰 차이 없이 적응할 수 있 다는 점이 너무 큰 장점으로 다가왔다!</p><p>그 내용을 적어보면 다음과 같이 정리할 수 있습니다:</p><h3 id="학습-중-알게-된-사항:-iOS와-Android의-스타일-차이_" class="Heading__HEADING_3-sc-1k0furn-2 jYyHCj"><b>학습 중 알게 된 사항: iOS와 Android의 스타일 차이</b></h3><p>React Native에서 &lt;Text&gt; 컴포넌트의 스타일링 시, iOS와 Android에서 다르게 동작하는 점이 있었습니다. 예를 들어, 다음 코드처럼 &lt;Text&gt; 컴포넌트에 borderRadius 스타일을 적용했을 때, Android에서는 둥근 모서리가 잘 적용되지만 iOS에서는 적용되지 않습니다. 아래 코드를 확인해보자!</p><pre class="Code__BlockCode-sc-1sgsjb6-1 kTtEmc"><code class="language-typescript">&lt;View style={styles.goalsContainer}&gt;
+ {courseGoals.map((i, k) =&gt; (
+  &lt;Text style={styles.goalItem} key={k}&gt;
+    {i}
+  &lt;/Text&gt;
+ ))}
+&lt;/View&gt;
+const styles = StyleSheet.create({
+  goalItem: {
+  margin: 8,
+  padding: 8,
+  borderRadius: 6,
+  backgroundColor: &quot;#5e0acc&quot;,
+  color: &quot;white&quot;,
+ },
+});</code></pre>
+이 문제를 해결하기 위해서는 &lt;Text&gt;를 &lt;View&gt; 컴포넌트로 감싸줘야 합니다.
+<pre class="Code__BlockCode-sc-1sgsjb6-1 kTtEmc"><code class="language-typescript">&lt;View style={styles.goalsContainer}&gt;
+  {courseGoals.map((i, k) =&gt; (
+   &lt;View style={styles.goalItem} key={k}&gt;
+      &lt;Text&gt;{i}&lt;/Text&gt;
+   &lt;/View&gt;
+ ))}
+&lt;/View&gt;</code></pre>하지만 위와 같이만 하면 텍스트의 색상이 사라지기 때문에, 텍스트에 별도의 스타일을 적용해야된다.
+<pre class="Code__BlockCode-sc-1sgsjb6-1 kTtEmc"><code class="language-typescript">&lt;View style={styles.goalsContainer}&gt;
+ {courseGoals.map((i, k) =&gt; (
+      &lt;View style={styles.goalItem} key={k}&gt;
+          &lt;Text style={styles.goalText}&gt;{i}&lt;/Text&gt;
+      &lt;/View&gt;
+ ))}
+&lt;/View&gt;
+
+const styles = StyleSheet.create({
+ goalsContainer: { 
+   flex: 8,
+ }, 
+ goalItem: {
+   margin: 8, 
+   padding: 8,
+   borderRadius: 6,
+   backgroundColor: &quot;#5e0acc&quot;,
+ },
+ goalText: {
+   color: &quot;white&quot;, 
+ }, 
+});</code></pre>
+이렇게 구조를 변경하면, iOS와 Android 모두에서 둥근 모서리와 텍스트 색상이 정상적으로 적용됩니다.<h3 id="웹뷰로-앱을-개발한-경험_" class="Heading__HEADING_3-sc-1k0furn-2 jYyHCj"><b>웹뷰로 앱을 개발한 경험</b></h3><p>과거에 웹뷰로 앱을 개발한 적이 있습니다. 그 당시에는 RTC와 소켓을 이용해 화상 학습 기능을 구현했지만, 화면 공유 같은 네이티브 기능을 제대로 사용할 수 없었습니다. 웹뷰로 구현된 화면 공유 기능은 앱에서 제대로 작동하지 않았기 때문에, 웹뷰 대신 네이티브 앱을 직접 개발하는 것이 더 나은 선택이라는 것을 깨달았습니다.</p><h3 id="앞으로의-목표_" class="Heading__HEADING_3-sc-1k0furn-2 jYyHCj"><b>앞으로의 목표</b></h3><p>익숙한 React 구조를 바탕으로 모바일 네이티브 기능을 다루면서, 웹뷰로는 한계가 있었던 네이티브 앱 개발의 경험을 쌓는 것이 목표입니다.</p></div><div></div></div><div class="TableOfContents__Wrapper-sc-1nnntu9-0 eWjeQm"><div class="TableOfContents__Title-sc-1nnntu9-1 krraYG">Table of Contents</div><div class="TableOfContents__Items-sc-1nnntu9-2 dgbGMb"><a class="TableOfContents__Item-sc-1nnntu9-3 fNOKUx" href="/리엑트네이티브/#React-Native를-선택한-이유_">React Native를 선택한 이유</a><a class="TableOfContents__Item-sc-1nnntu9-3 fNOKUx" href="/리엑트네이티브/#React-Native와-React의-차이점_">React Native와 React의 차이점</a><a class="TableOfContents__Item-sc-1nnntu9-3 fNOKUx" href="/리엑트네이티브/#학습-중-알게-된-사항:-iOS와-Android의-스타일-차이_">학습 중 알게 된 사항: iOS와 Android의 스타일 차이</a><a class="TableOfContents__Item-sc-1nnntu9-3 fNOKUx" href="/리엑트네이티브/#웹뷰로- 앱을-개발한-경험_">웹뷰로 앱을 개발한 경험</a><a class="TableOfContents__Item-sc-1nnntu9-3 fNOKUx" href="/리엑트네이티브/#앞으로의-목표_">앞으로의 목표</a></div></div></div></div><footer class="Footer__Wrapper-sc-1mndp28-0 bbQMae"><div>Thank You for Visiting My Blog, Have a Good Day 😆</div><div>Copyright © 2024 Developer 📓 J-Hoon</div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/리엑트네이티브/";/*]]>*/</script><!-- slice-start id="_gatsby-scripts-1" -->
+          <script
+            id="gatsby-chunk-mapping"
+          >
+            window.___chunkMapping="{\"app\":[\"/app-ac26f34bcc98dd2572b5.js\"],\"component---src-pages-404-tsx\":[\"/component---src-pages-404-tsx-67911476e1f4e7f6fc5d.js\"],\"component---src-pages-index-tsx\":[\"/component---src-pages-index-tsx-3386c7a0367efd2bd8bc.js\"],\"component---src-templates-post-tsx\":[\"/component---src-templates-post-tsx-016eb08fab5d8a671e2f.js\"]}";
+          </script>
+        <script>window.___webpackCompilationHash="2f24e906ce40412e5460";</script><script src="/webpack-runtime-8d7489edaa0e9c5f910b.js" async></script><script src="/framework-473bdb2c6f92323ce75e.js" async></script><script src="/cb355538-f4e185d19cab93b8c302.js" async></script><script src="/app-ac26f34bcc98dd2572b5.js" async></script><!-- slice-end id="_gatsby-scripts-1" --></body></html>

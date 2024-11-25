@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://choi-jeonghoon.github.io/sitemap-index.xml
+Host: https://choi-jeonghoon.github.io
