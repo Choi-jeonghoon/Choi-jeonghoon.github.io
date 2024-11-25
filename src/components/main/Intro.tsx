@@ -31,7 +31,7 @@ export default function Intro() {
               Mail
             </StyledLink>
             <StyledLink
-              href="mailto:devjeongssi94@gmail.com"
+              href="https://github.com/Choi-jeonghoon/Choi-jeonghoon.github.io"
               target="_blank"
               rel="noopener noreferrer"
             >
