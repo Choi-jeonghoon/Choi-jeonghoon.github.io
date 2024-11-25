@@ -2,14 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import { GatsbyLinkProps, Link } from 'gatsby'
 import useTableOfContents from '../../hooks/useTableOfContents'
+import { ContentProps } from '../../types/Content'
 
-type TableOfContentsProps = {
-  content: Queries.ContentfulPostContent
-}
-
-export default function TableOfContents({
-  content: { raw },
-}: TableOfContentsProps) {
+export default function TableOfContents({ content: { raw } }: ContentProps) {
   const { toc, activeId } = useTableOfContents(raw as string)
 
   return (

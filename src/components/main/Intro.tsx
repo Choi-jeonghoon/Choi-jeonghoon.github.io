@@ -3,6 +3,48 @@ import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
 import { AiFillGithub, AiFillMail } from 'react-icons/ai'
 
+export default function Intro() {
+  return (
+    <>
+      <Container>
+        <ProfileImage>
+          <StaticImage src="../../images/JH_0.jpeg" alt="Profile Image" />
+        </ProfileImage>
+        <Menu>
+          <SubText></SubText>
+          <MainText>I&apos;m Junior Developer Jeong-Hoon</MainText>
+          <LinksContainer>
+            <StyledLink
+              href="https://github.com/Choi-jeonghoon"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <AiFillGithub />
+              GitHub
+            </StyledLink>
+            <StyledLink
+              href="mailto:devjeongssi94@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <AiFillMail />
+              Mail
+            </StyledLink>
+            <StyledLink
+              href="mailto:devjeongssi94@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <AiFillGithub />
+              Blog_GitHub
+            </StyledLink>
+          </LinksContainer>
+        </Menu>
+      </Container>
+    </>
+  )
+}
+
 const Container = styled.div`
   display: flex;
   align-items: flex-start;
@@ -108,37 +150,3 @@ const StyledLink = styled.a`
     padding: 2px 7px;
   }
 `
-
-export default function Intro() {
-  return (
-    <>
-      <Container>
-        <ProfileImage>
-          <StaticImage src="../../images/JH_0.jpeg" alt="Profile Image" />
-        </ProfileImage>
-        <Menu>
-          <SubText></SubText>
-          <MainText>I&apos;m Junior Developer Jeong-Hoon</MainText>
-          <LinksContainer>
-            <StyledLink
-              href="https://github.com/Choi-jeonghoon"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <AiFillGithub />
-              GitHub
-            </StyledLink>
-            <StyledLink
-              href="mailto:devjeongssi94@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <AiFillMail />
-              Mail
-            </StyledLink>
-          </LinksContainer>
-        </Menu>
-      </Container>
-    </>
-  )
-}

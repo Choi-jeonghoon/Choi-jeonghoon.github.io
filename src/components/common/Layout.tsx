@@ -15,7 +15,7 @@ export default function Layout({ children }: TLayoutProps) {
     <ThemeProvider theme={currentTheme}>
       <>
         <Wrapper>
-          <GlobalStyle></GlobalStyle>
+          <GlobalStyle />
           <Header />
           <Contents>{children}</Contents>
           <Footer />

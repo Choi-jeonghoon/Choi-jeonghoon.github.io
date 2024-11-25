@@ -1,16 +1,15 @@
-import React from 'react'
+import React, { memo } from 'react'
 import styled from 'styled-components'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { TPostHeadProps } from '../../types/PostHeadType'
-import { useThemeStore } from '../../store/themeStore'
 
-export default function PostHead({
+const PostHead = ({
   thumbnail,
   title,
   category,
   description,
   date,
-}: TPostHeadProps) {
+}: TPostHeadProps) => {
   return (
     <Wrapper>
       <Title>{title}</Title>
@@ -18,10 +17,10 @@ export default function PostHead({
       <Information>
         <Category>
           {category.map(item => (
-            <div key={item}>#{item}</div>
+            <CategoryItem key={item}>{`#${item}`}</CategoryItem>
           ))}
         </Category>
-        <div>{date}</div>
+        <Date>{date}</Date>
       </Information>
 
       <Thumbnail image={thumbnail} alt={title} />
@@ -124,6 +123,10 @@ const Category = styled.div`
   gap: 7px;
 `
 
+const CategoryItem = styled.div``
+
+const Date = styled.div``
+
 const Thumbnail = styled(GatsbyImage)`
   position: absolute;
   top: 0;
@@ -146,3 +149,6 @@ const Thumbnail = styled(GatsbyImage)`
     );
   }
 `
+
+// React.memo를 사용해 불필요한 렌더링을 방지
+export default memo(PostHead)

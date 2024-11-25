@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeadFC, HeadProps, PageProps, graphql } from 'gatsby'
+import { HeadProps, PageProps, graphql } from 'gatsby'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import PostHead from '../components/post/PostHead'
 import PostBody from '../components/post/PostBody'
@@ -8,17 +8,14 @@ import SEO from '../components/common/Seo'
 export default function Post({
   data: { contentfulPost },
 }: PageProps<Queries.PostPageQuery>) {
+  const description = contentfulPost?.description?.description ?? ''
+
   return (
     <>
       <PostHead
         title={contentfulPost?.title as string}
         category={contentfulPost?.category as string[]}
-        description={
-          typeof contentfulPost?.description === 'object' &&
-          contentfulPost.description !== null
-            ? contentfulPost.description.description ?? ''
-            : ''
-        }
+        description={description}
         date={contentfulPost?.date as string}
         thumbnail={
           contentfulPost?.thumbnail?.gatsbyImageData as IGatsbyImageData
@@ -31,7 +28,7 @@ export default function Post({
   )
 }
 
-export const Head: HeadFC<Queries.PostPageQuery> = ({
+export const Head = ({
   data: { contentfulPost },
 }: HeadProps<Queries.PostPageQuery>) => {
   return (
@@ -73,13 +70,3 @@ export const query = graphql`
     }
   }
 `
-
-/*
-@Memo
-  ... on => GraphQL의 인라인 프래그먼트 문법으로, 특정 타입에 해당하는 필드를 선택적으로 쿼리할 때 사용
-  EX)
-  Contentful의 `references` 필드 내에 여러 타입의 객체가 있을 수 있는데, 그 중에서 `ContentfulAsset` 타입에만 있는 필드를 쿼리하고 싶을 때 사용합니다.
-  
-  __typename => GraphQL에서 제공하는 메타 필드로, 해당 객체의 타입명을 의미. 이를 통해 쿼리 결과에서 객체의 타입을 확인
-
-  */

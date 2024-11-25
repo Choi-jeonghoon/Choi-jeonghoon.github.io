@@ -5,9 +5,22 @@ import 'prismjs/components/prism-typescript'
 import useRenderRichText from '../../hooks/useRenderRichText'
 import Comment from './Comment'
 import TableOfContents from './TableOfContents'
+import { ContentProps } from '../../types/Content'
 
-type PostBodyProps = {
-  content: Queries.ContentfulPostContent
+export default function PostBody({ content }: ContentProps) {
+  const richText = useRenderRichText(content)
+
+  useEffect(Prism.highlightAll, [])
+
+  return (
+    <Wrapper>
+      <Content>
+        <div id="content">{richText}</div>
+        <Comment />
+      </Content>
+      <TableOfContents content={content} />
+    </Wrapper>
+  )
 }
 
 const Wrapper = styled.div`
@@ -40,19 +53,3 @@ const Content = styled.div`
     line-height: 1.8;
   }
 `
-
-export default function PostBody({ content }: PostBodyProps) {
-  const richText = useRenderRichText(content)
-
-  useEffect(Prism.highlightAll, [])
-
-  return (
-    <Wrapper>
-      <Content>
-        <div id="content">{richText}</div>
-        <Comment />
-      </Content>
-      <TableOfContents content={content} />
-    </Wrapper>
-  )
-}
