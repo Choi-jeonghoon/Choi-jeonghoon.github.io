@@ -97,6 +97,7 @@ const MainText = styled.div`
   @media (max-width: 768px) {
     font-size: 15px;
     text-align: center;
+    margin-bottom: 0px;
   }
 `
 
@@ -116,7 +117,10 @@ const LinksContainer = styled.div`
   gap: 15px;
 
   @media (max-width: 768px) {
+    gap: 10px;
     justify-content: center;
+    flex-wrap: wrap;
+    width: 230px;
   }
 `
 
